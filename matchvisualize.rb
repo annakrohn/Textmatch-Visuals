@@ -7,11 +7,13 @@ include Magick
 
 class Visualize
 
-	def make_image_of(string1, string2)
+	def make_image_of(path1, path2, save_path)
+		string1 = File.open(path1).read
+		string2 = File.open(path2).read
 		text = Textmatch.new
 		array = text.match_text(string1, string2) #string1 is y-axis, string2 x-axis
-		x_size = (array[0].length)*10 #so array.length = y-axis and array[0].length = x-axis
-		y_size = (array.length)*10
+		x_size = array[0].length #so array.length = y-axis and array[0].length = x-axis
+		y_size = array.length
 		vis = Magick::ImageList.new
 		vis.new_image(x_size, y_size) {self.background_color = "grey"}
 		y_count = 0
@@ -20,18 +22,22 @@ class Visualize
 			y_ax.each do |x_ax|
 				if x_ax == 1
 					box = Magick::Draw.new
-					x1 = x_count*10 #top left corner
-					y1 = y_count*10
-					x2 = (x_count + 1)*10 #bottom right corner
-					y2 = (y_count + 1)*10
-					box.rectangle(x1,y1, x2,y2) #doing as rectangle to allow for scaling depending on image size? Not sure if this really makes sense...  should probably change to a point
+					x1 = x_count #pixel location
+					y1 = y_count
+					box.point(x1,y1) 
 					box.draw(vis)
 				end
 				x_count += 1
 			end
 			y_count += 1
+		end
+		if x_size < 100
+			vis = vis.scale(10.0)
 		end 
 		vis.display
+		if save_path
+			vis.write(save_path)
+		end
 		exit	
 	end
 end

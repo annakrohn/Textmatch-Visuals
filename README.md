@@ -3,8 +3,8 @@ Textmatch-Visuals
 
 A tool for creating visual representations of word matches between two texts.
 
-This program is based on what are more commonly bioinfomatics concepts; the Needleman–Wunsch algorithm, 
-global alignment, and dot-matrix plots.  Many areas of literature have long histories of textual study 
+This program is based on what are more commonly bioinfomatics concepts; the [Needleman–Wunsch](http://en.wikipedia.org/wiki/Needleman%E2%80%93Wunsch_algorithm) algorithm, 
+[global alignment](http://en.wikipedia.org/wiki/Sequence_alignment#Global_and_local_alignments), and dot-matrix plots.  Many areas of literature have long histories of textual study 
 and comparison, so this analysis is nothing new, but presents a means of visualizing the relations between words in 
 two sections of text.  A work can be compared to itself or mapped to other works to find word, and potentially phrase, 
 similarities and differences.  T-V is far from complete.  At the moment only one-to-one word matches are supported and 
@@ -28,7 +28,7 @@ Comparing the text to itself in this manner produces the below image.
 To-Do
 -----
 *  add support for command line input of text, either inputting strings directly or in file format  
-*  add a stemmer or lemmatizer, I'll probably be making use of Ruby-Stemmer  
+*  add a stemmer or lemmatizer, I'll probably be making use of [Ruby-Stemmer](https://github.com/aurelian/ruby-stemmer)  
 *  add Latin language grammar support
 
 Installation
