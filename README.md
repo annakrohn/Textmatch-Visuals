@@ -10,6 +10,21 @@ two sections of text.  A work can be compared to itself or mapped to other works
 similarities and differences.  T-V is far from complete.  At the moment only one-to-one word matches are supported and 
 the texts are hard coded.
 
+Use
+---
+As an example, in create_textmatch_image.rb I've called make_image_of with the following text of the Aeneid supplied twice.   
+
+    'I sing of arms and the man, he who, exiled by fate,  
+    first came from the coast of Troy to Italy, and to  
+    Lavinian shores hurled about endlessly by land and sea,  
+    by the will of the gods, by cruel Juno’s remorseless anger,  
+    long suffering also in war, until he founded a city  
+    and brought his gods to Latium'
+
+Comparing the text to itself in this manner produces the below image.
+![blarg](http://i.imgur.com/dgsqS.png)
+
+
 To-Do
 -----
 *  add support for command line input of text, either inputting strings directly or in file format  
