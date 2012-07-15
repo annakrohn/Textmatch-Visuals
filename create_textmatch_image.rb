@@ -8,9 +8,7 @@ class ArgsParser
 	def self.parse(args)
 		options = {}
 		OptionParser.new do |opts|
-			opts.banner = "Usage: create_textmatch_image.rb [options], provide paths for text files
-			and path for where the output image should be saved, be sure to inlucde the proper file 
-			extension, .jpg, .png, etc. If no save path is provided, the image will not save."
+			opts.banner = "Usage: create_textmatch_image.rb [options], provide paths for text files and path for where the output image should be saved, be sure to inlucde the proper file extension, .jpg, .png, etc. If no save path is provided, the image will not save."
 
 			opts.on("-o", "--text_one [path_to_file]", "Input path for first text") do |one|
 				options[:text_one] = one if one =~ /\.txt|\.doc/

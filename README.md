@@ -13,6 +13,13 @@ In order generate a textmatch image with TM-V, run from the command line,
 
 	create_textmatch_image.rb -o [path] -t [path] -s [path]
 
+	--help
+	Usage: create_textmatch_image.rb [options], provide paths for text files and path for where the output image should be saved, be sure to inlucde the proper file extension, .jpg, .png, etc. If no save path is provided, the image will not save.
+    -o, --text_one [path_to_file]    Input path for first text
+    -t, --text_two [path_to_file]    Input path for second text
+    -s, --save_to [path_to_save]     Input the save path
+
+
 The -o and -t flags are for specifying the files of the texts to be compared.  If you want the image you create to be saved, provide a path with the -s flag.  If no -s is included, the textmatch image will only be displayed, not saved.  
 As an example, I've provided two sample text files with the following exerpt of the Aeneid.   
 
