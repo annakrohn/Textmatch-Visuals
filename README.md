@@ -26,6 +26,7 @@ In order generate a textmatch image with TM-V, run from the command line,
 
 The -o and -t flags are for specifying the files of the texts to be compared.  If you want the image you create to be saved, provide a path with the -s flag.  If no -s is included, the textmatch image will only be displayed, not saved.  
 As an example, I've provided two sample text files with the following exerpts of the Aeneid.   
+
 	Text_1
     'I sing of arms and the man, he who, exiled by fate,
 	first came from the coast of Troy to Italy, and to
