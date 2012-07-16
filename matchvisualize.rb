@@ -20,18 +20,23 @@ class Visualize
 		array.each do |y_ax|
 			x_count = 0
 			y_ax.each do |x_ax|
-				if x_ax == 1
+				if x_ax != 0
 					box = Magick::Draw.new
 					x1 = x_count #pixel location
 					y1 = y_count
-					box.point(x1,y1) 
+					if x_ax == 2
+						box.fill('red')
+					end
+					box.point(x1,y1)
 					box.draw(vis)
+				else
 				end
+
 				x_count += 1
 			end
 			y_count += 1
 		end
-		if x_size < 100
+		if x_size < 500
 			vis = vis.scale(10.0)
 		end 
 		vis.display

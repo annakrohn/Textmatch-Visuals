@@ -1,5 +1,6 @@
 #!/usr/local/bin/ruby
 require 'rubygems'
+require 'lingua/stemmer'
 require 'ruby-debug'
 
 class Textmatch
@@ -13,18 +14,25 @@ class Textmatch
 	end
 
 	def match_text(string_one, string_two)
-		array_one = string_one.split(/\s+|\.\s|,\s|;\s/)
-		array_two = string_two.split(/\s+|\.\s|,\s|;\s/)
+		array_one = string_one.split(/\s+|\.\s*|,\s+|;\s+|:\s+|\W*\(|\)\W*/)
+		array_two = string_two.split(/\s+|\.\s*|,\s+|;\s+|:\s+|\W*\(|\)\W*/)
 		match_ary = []
+		stemmer = Lingua::Stemmer.new(:language => 'eng')
 		#match_ary[0] = [""] + array_two
 		array_one.each do |o_w|
 			row = []
+			o_stem = stemmer.stem(o_w).downcase
 			#row << o_w
 			array_two.each do |t_w|
 				if t_w == o_w
 					row << 1
 				else
-					row << 0
+					t_stem = stemmer.stem(t_w).downcase
+					if t_stem == o_stem
+						row << 2
+					else
+						row << 0
+					end
 				end
 			end
 			match_ary << row

@@ -28,6 +28,7 @@ class TestTextmatch < Test::Unit::TestCase
 	end
 
 	def test_visualize
+		
 
 	end
 end
